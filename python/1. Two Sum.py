@@ -1,0 +1,17 @@
+# Link: https://leetcode.com/problems/two-sum/description/
+from typing import List
+
+
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        hashMap = {}
+
+        for i in range(len(nums)):
+            remainder = target - nums[i]
+            if remainder in hashMap:
+                return (hashMap[remainder], i)
+            hashMap[nums[i]] = i
+        
+        return []
+            
+        
